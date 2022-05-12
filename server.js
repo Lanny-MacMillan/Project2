@@ -8,6 +8,10 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 
+
+const Amiibo = require('./models/schema.js')
+const seedAmiibo = require('./models/seed.js')
+
 //___________________
 //Port
 //___________________
@@ -23,7 +27,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , () => {
+mongoose.connect(MONGODB_URI, () => {
     console.log('connected to mongo')
 });
 
@@ -32,6 +36,15 @@ db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
+
+
+app.get('/seed', (req, res) => {
+    //   schema         seedData
+        Amiibo.create(seedAmiibo, (err, createdData) => {
+            console.log('Seed data registered!')
+        })
+        res.redirect('/')
+    })
 // =======================================
 //              MIDDLEWARE
 // =======================================
