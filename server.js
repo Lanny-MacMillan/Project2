@@ -38,13 +38,13 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 
 
-app.get('/seed', (req, res) => {
-    //   schema         seedData
-        Amiibo.create(seedAmiibo, (err, createdData) => {
-            console.log('Seed data registered!')
-        })
-        res.redirect('/')
-    })
+// app.get('/seed', (req, res) => {
+//     //   schema         seedData
+//         Amiibo.create(seedAmiibo, (err, createdData) => {
+//             console.log('Seed data registered!')
+//         })
+//         res.redirect('/')
+//     })
 // =======================================
 //              MIDDLEWARE
 // =======================================
@@ -63,12 +63,16 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //              ROUTES
 // =======================================
 // INDEX
-app.get('/' , (req, res) => {
+app.get('/', (req, res) => {
+    Amiibo.find({}, (error, allAmiibo) => {
     res.render(
-        'index.ejs'
-    )
-});
-
+        'index.ejs', 
+        {
+        Amiibo: allAmiibo
+        }
+        )
+})
+})
 // NEW
 app.get('/show' , (req, res) => {
     res.render(

@@ -8,6 +8,16 @@
 </head>
 <body>
     <h1>Index/Main Page</h1>
+    <ul>
+        <%for(let i =0; i < Amiibo.length; i++){%>
+                <h1><a href="/<%=Amiibo[i].id;%>"><%=Amiibo[i].name; %></a></h1>
+                <h2><%=Amiibo[i].id%></h2>
+                <img src="<%=Amiibo[i].img;%>" alt="<%=Amiibo[i].name; %>">
+                <br><button onclick="window.location.href= '/<%=Amiibo[i].id%>/edit'" type=" button" name="button">Edit <%=Amiibo[i].name; %></button>
+
+                <br>
+        <%}%>
+    </ul>
     <button onclick="window.location.href= '/edit' " type=" button" name="button">Edit Page</button>
     <button onclick="window.location.href= '/new' " type=" button" name="button">New Page</button>
     <button onclick="window.location.href= '/show' " type=" button" name="button">Show Page</button>
