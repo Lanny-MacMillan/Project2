@@ -1,6 +1,6 @@
-//___________________
-//Dependencies
-//___________________
+// =======================================
+//              DEPENDENCIES
+// =======================================
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
@@ -14,9 +14,9 @@ require('dotenv').config()
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT
 
-//___________________
-//Database
-//___________________
+// =======================================
+//              DATABASE
+// =======================================
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -32,10 +32,9 @@ db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
-//___________________
-//Middleware
-//___________________
-
+// =======================================
+//              MIDDLEWARE
+// =======================================
 //use public folder for static assets
 app.use(express.static('public'));
 
@@ -47,15 +46,36 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
-//___________________
-// Routes
-//___________________
-//localhost:3000
+// =======================================
+//              ROUTES
+// =======================================
+// INDEX
 app.get('/' , (req, res) => {
-    res.send('Hello World!');
+    res.render(
+        'index.ejs'
+    )
 });
 
-//___________________
-//Listener
-//___________________
+// NEW
+app.get('/show' , (req, res) => {
+    res.render(
+        'show.ejs'
+    )
+});
+// NEW
+app.get('/new' , (req, res) => {
+    res.render(
+        'new.ejs'
+    )
+});
+
+// EDIT
+app.get('/edit' , (req, res) => {
+    res.render(
+        'edit.ejs'
+    )
+});
+// =======================================
+//              Listener
+// =======================================
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
