@@ -38,13 +38,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 
 
 
-// app.get('/seed', (req, res) => {
-//     //   schema         seedData
-//         Amiibo.create(seedAmiibo, (err, createdData) => {
-//             console.log('Seed data registered!')
-//         })
-//         res.redirect('/')
-//     })
+
 // =======================================
 //              MIDDLEWARE
 // =======================================

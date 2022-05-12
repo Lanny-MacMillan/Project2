@@ -8,7 +8,7 @@ const amiiboSchema = new mongoose.Schema(
     series: {type:String, required:true},
     description: {type:String, required:true},
     condition: {type:String, required:true},
-    price: {type:Number, required:true},
+    price: {type:String, required:true},
     purchasedFrom: {type:String, required:true},
     }
 )
