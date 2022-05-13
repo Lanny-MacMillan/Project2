@@ -1,14 +1,19 @@
-body {
-    text-align: center;
+.mainContainer {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+.header{
+    max-width: 1200px;
 }
 ul {
-    list-style: none;
+    text-align: center;
 }
-img {
+.indexImg {
     width: 100%;
-    max-width:320px;
+    max-width: 428px;
 }
-.logo {
-    width: 100%;
-    max-width:420px;
-}
+/* #catalog {
+    display: flex;
+    justify-content: center;
+} */

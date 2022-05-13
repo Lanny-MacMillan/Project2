@@ -7,9 +7,8 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
-
-
 const Amiibo = require('./models/schema.js')
+
 
 //body parser, parses form 
 app.use(express.urlencoded({extended: true}));
@@ -138,22 +137,23 @@ app.post('/', (req,res) => {
 	})
 })
 
-// EDIT
-// app.get('/:id/edit', (req, res) => {
-// 	Movies.findById(req.params.id, (err, editMovie) => {
-// 		res.render(
-// 			'edit.ejs', {
-// 				Movies: editMovie
-// 			}
-// 		)
-// 	})
-// })
-// app.put('/:id', (req, res) => {
-//     // findOneAndUpdate looks for whats in the {}   where it will be updated
-//         Amiibo.findOneAndUpdate({id:req.params.id}, req.body, {new:true}, (err, updatedAmiibo) => {
-//             res.redirect('/')
-//         })
-//     })
+// EDIT/GET
+app.get('/:id/edit', (req, res) => {
+	Amiibo.findById(req.params.id, (err, editAmiibo) => {
+		res.render(
+			'edit.ejs', {
+				Amiibo: editAmiibo
+			}
+		)
+	})
+})
+// EDIT/POST
+app.put('/:id', (req, res) => {
+    Amiibo.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedAmiibo) => {
+        res.redirect('/')
+    })
+})
+
 // DELETE
 app.delete('/:id', (req, res)=>{
     Amiibo.findByIdAndRemove(req.params.id, (err, data)=>{

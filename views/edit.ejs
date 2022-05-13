@@ -7,10 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Edit Page</h1>
-    <button onclick="window.location.href= '/' " type=" button" name="button">Index/Home Page</button>
-    <button onclick="window.location.href= '/new' " type=" button" name="button">New Page</button>
-    <button onclick="window.location.href= '/show' " type=" button" name="button">Show Page</button>
-
+    <div class="header">
+        <div class="container">
+            <img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="logo" alt="Amiibo" srcset="">
+            <br>
+            <ul class="nav navbar-nav">
+                <a href="/">Home</a>
+                <a href="/new">Add New</a>
+            </ul>
+        </div>
+    </div>
+    <h1><%=Amiibo.name%> Edit</h1>
+    <img src="<%=Amiibo.img;%>" alt="<%=Amiibo.name; %>">
+    <br>
+    <form action="/<%=Amiibo.id;%>?_method=PUT" method="POST" >
+        <input type="text" name="name" placeholder="* Name" required /><br/>
+        <input type="text" name="img" placeholder="* Image(url)" required /><br/>
+        <input type="text" name="series" placeholder="* Series" required /><br/>
+        <input type="text" name="description"placeholder="* Description" required /><br/>
+        <input type="text" name="condition" placeholder="* Condition" required /><br/>
+        <input type="text" name="price" placeholder="* Price" required /><br/>
+        <input type="text" name="purchasedFrom" placeholder="* Purchased from" required /><br/>
+        <input type="textarea" rows="5" columns="10" name="compatibleGames" placeholder="Compatible Games"/><br/>
+        <input type="text" name="gameFunction" placeholder="Game Function"/><br/>
+        * Required Fields
+        <br>
+        <input type="submit" class="myButton" value="Edit Amiibo"/>
+        <br>
+        <button onclick="window.location.href= '/'" type="button" class="myButton" name="button">Back Home</button>
+    </form>
 </body>
 </html>
