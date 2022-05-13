@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Create/New Page</h1>
-    <button onclick="window.location.href= '/edit' " type=" button" name="button">Edit Page</button>
-    <button onclick="window.location.href= '/' " type=" button" name="button">Index/Home Page</button>
-    <button onclick="window.location.href= '/show' " type=" button" name="button">Show Page</button>
+    <header>
+        <img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="logo" alt="Amiibo" srcset="">
+        <h1>Catalog</h1>
+        </header>
+        <br>
+    <h1>Add New Amiibo</h1>
+    <br>
+    <form action="/" method="POST">
+        <input type="text" name="name" placeholder="Name"/><br/>
+        <input type="text" name="img" placeholder="Image(url)"/><br/>
+        <input type="text" name="series" placeholder="Series"/><br/>
+        <input type="text" name="description"placeholder="Description"/><br/>
+        <input type="text" name="condition" placeholder="Condition"/><br/>
+        <input type="text" name="price" placeholder="Price"/><br/>
+        <input type="text" name="purchasedFrom" placeholder="Purchased from"/><br/>
+        <input type="text" name="compatibleGames" placeholder="Compatible Games"/><br/>
+        <input type="text" name="gameFunction" placeholder="Game Function"/><br/>
+        <br>
+        <input type="submit" class="myButton" value="Add Amiibo"/>
+        <button onclick="window.location.href= '/'" type="button" class="myButton" name="button">Back Home</button>
+    </form>
 </body>
 </html>

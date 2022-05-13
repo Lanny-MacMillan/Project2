@@ -73,6 +73,14 @@ app.get('/', (req, res) => {
         )
     })
 })
+
+// NEW/GET
+app.get('/new', (req, res) => {
+    res.render(
+        'new.ejs', 
+        )
+})
+
 // SHOW
 app.get('/:id', (req, res) => {
     Amiibo.findById(req.params.id, (error, showAmiibo) => {
@@ -84,18 +92,25 @@ app.get('/:id', (req, res) => {
         );
     })
 })
-// NEW
-app.get('/new' , (req, res) => {
-    res.render(
-        'new.ejs'
-    )
-});
+
+// NEW/POST
+app.post('/', (req,res) => {
+	Amiibo.create(req.body, (err, newAmiibo) => {
+		res.redirect('/')
+	})
+})
 
 // EDIT
 app.get('/edit' , (req, res) => {
     res.render(
         'edit.ejs'
     )
+});
+
+app.delete('/:id', (req, res)=>{
+    Amiibo.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/');//redirect back to index
+    });
 });
 // =======================================
 //              Listener
