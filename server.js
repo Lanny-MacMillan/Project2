@@ -155,11 +155,11 @@ app.put('/:id', (req, res) => {
 })
 
 // DELETE
-app.delete('/:id', (req, res)=>{
-    Amiibo.findByIdAndRemove(req.params.id, (err, data)=>{
-        res.redirect('/');//redirect back to index
-    });
-});
+// app.delete('/:id', (req, res)=>{
+//     Amiibo.findByIdAndRemove(req.params.id, (err, data)=>{
+//         res.redirect('/');//redirect back to index
+//     });
+// });
 // =======================================
 //              Listener
 // =======================================
