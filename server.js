@@ -42,6 +42,44 @@ db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
+// function validate(){
+//     var pass1 = document.getElementById('name').value;
+//     var pass2 = document.getElementById('img').value;
+//     var pass3 = document.getElementById('series').value;
+//     var pass4 = document.getElementById('description').value;
+//     var pass5 = document.getElementById('condition').value;
+//     var pass6 = document.getElementById('price').value;
+//     var pass7 = document.getElementById('purchasedFrom').value;
+//     if(pass1 == ""){
+//         alert('name field cannot be empty')
+//         return false
+//     }
+//     if(pass2 == ""){
+//         alert('img field cannot be empty')
+//         return false
+//     }
+//     if(pass3 == ""){
+//         alert('series field cannot be empty')
+//         return false
+//     }
+//     if(pass4 == ""){
+//         alert('description field cannot be empty')
+//         return false
+//     }
+//     if(pass5 == ""){
+//         alert('condition field cannot be empty')
+//         return false
+//     }
+//     if(pass6 == ""){
+//         alert('price field cannot be empty')
+//         return false
+//     }
+//     if(pass7 == ""){
+//         alert('purchased field from cannot be empty')
+//         return false
+//     }
+//     return true
+// }
 
 
 
@@ -101,12 +139,22 @@ app.post('/', (req,res) => {
 })
 
 // EDIT
-app.get('/edit' , (req, res) => {
-    res.render(
-        'edit.ejs'
-    )
-});
-
+// app.get('/:id/edit', (req, res) => {
+// 	Movies.findById(req.params.id, (err, editMovie) => {
+// 		res.render(
+// 			'edit.ejs', {
+// 				Movies: editMovie
+// 			}
+// 		)
+// 	})
+// })
+// app.put('/:id', (req, res) => {
+//     // findOneAndUpdate looks for whats in the {}   where it will be updated
+//         Amiibo.findOneAndUpdate({id:req.params.id}, req.body, {new:true}, (err, updatedAmiibo) => {
+//             res.redirect('/')
+//         })
+//     })
+// DELETE
 app.delete('/:id', (req, res)=>{
     Amiibo.findByIdAndRemove(req.params.id, (err, data)=>{
         res.redirect('/');//redirect back to index

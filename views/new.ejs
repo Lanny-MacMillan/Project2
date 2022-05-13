@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="app.js" charset="utf-8"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -14,16 +15,18 @@
         </header>
         <br>
     <h1>Add New Amiibo</h1>
+
+
     <br>
-    <form action="/" method="POST">
-        <input type="text" name="name" placeholder="* Name"/><br/>
-        <input type="text" name="img" placeholder="* Image(url)"/><br/>
-        <input type="text" name="series" placeholder="* Series"/><br/>
-        <input type="text" name="description"placeholder="* Description"/><br/>
-        <input type="text" name="condition" placeholder="* Condition"/><br/>
-        <input type="text" name="price" placeholder="* Price"/><br/>
-        <input type="text" name="purchasedFrom" placeholder="* Purchased from"/><br/>
-        <input type="text" name="compatibleGames" placeholder="Compatible Games"/><br/>
+    <form action="/" method="POST" >
+        <input type="text" name="name" placeholder="* Name" required /><br/>
+        <input type="text" name="img" placeholder="* Image(url)" required /><br/>
+        <input type="text" name="series" placeholder="* Series" required /><br/>
+        <input type="text" name="description"placeholder="* Description" required /><br/>
+        <input type="text" name="condition" placeholder="* Condition" required /><br/>
+        <input type="text" name="price" placeholder="* Price" required /><br/>
+        <input type="text" name="purchasedFrom" placeholder="* Purchased from" required /><br/>
+        <input type="textarea" rows="5" columns="10" name="compatibleGames" placeholder="Compatible Games"/><br/>
         <input type="text" name="gameFunction" placeholder="Game Function"/><br/>
         * Required Fields
         <br>
