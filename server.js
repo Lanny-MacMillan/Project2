@@ -10,7 +10,6 @@ require('dotenv').config()
 
 
 const Amiibo = require('./models/schema.js')
-const seedAmiibo = require('./models/seed.js')
 
 //body parser, parses form 
 app.use(express.urlencoded({extended: true}));
