@@ -16,7 +16,6 @@
     <ul>
         <%for(let i =0; i < Amiibo.length; i++){%>
                 <h1><a href="/<%=Amiibo[i].id;%>"><%=Amiibo[i].name; %></a></h1>
-                <h2><%=Amiibo[i].id%></h2>
                 <img src="<%=Amiibo[i].img;%>" alt="<%=Amiibo[i].name; %>">
                 <br><button onclick="window.location.href= '/<%=Amiibo[i].id%>/edit'" type=" button" name="button">Edit <%=Amiibo[i].name; %></button>
                 <br>

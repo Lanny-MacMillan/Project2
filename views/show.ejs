@@ -12,7 +12,29 @@
     <img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="logo" alt="Amiibo" srcset="">
     </header>
     <br>
-
+    <h1><%=Amiibo.name%></h1>
+    <img src="<%=Amiibo.img;%>" alt="<%=Amiibo.name; %>">
+    <ul>
+        
+        <h3><%=Amiibo.series; %></h3>
+        <br>
+        <li><%=Amiibo.description; %></li>
+        <br>
+        Condition: <li><%=Amiibo.condition; %></li>
+        <br>
+        Price:<li><%=Amiibo.price; %></li>
+        <br>
+        Purchased From: <li><%=Amiibo.purchasedFrom; %></li>
+        <br>
+        <h4>Compatible Games: </h4>
+        <%for(let i =0; i < Amiibo.compatibleGames.length; i++){%>
+        <li><%=Amiibo.compatibleGames[i]; %></li>
+        <%}%>
+        <h4>Game Functions: </h4>
+        <%for(let i =0; i < Amiibo.gameFunction.length; i++){%>
+        <li><%=Amiibo.gameFunction[i]; %></li>
+        <%}%>
+    </ul>
     <br>
     <button onclick="window.location.href= '/edit' " type=" button" name="button">Edit Page</button>
     <button onclick="window.location.href= '/new' " type=" button" name="button">New Page</button>
