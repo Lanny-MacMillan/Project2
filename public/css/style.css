@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+img {
+    width: 100%;
+    max-width:320px;
+}
+.logo {
+    width: 100%;
+    max-width:420px;
+}
