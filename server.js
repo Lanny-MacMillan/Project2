@@ -61,18 +61,23 @@ app.get('/', (req, res) => {
     Amiibo.find({}, (error, allAmiibo) => {
     res.render(
         'index.ejs', 
-        {
-        Amiibo: allAmiibo
-        }
+            {
+            Amiibo: allAmiibo
+            }
         )
+    })
 })
+// SHOW
+app.get('/:id', (req, res) => {
+    Amiibo.findById(req.params.id, (error, showAmiibo) => {
+        res.render(
+            'show.ejs',
+            {
+            Amiibo: showAmiibo
+            }
+        );
+    })
 })
-// NEW
-app.get('/show' , (req, res) => {
-    res.render(
-        'show.ejs'
-    )
-});
 // NEW
 app.get('/new' , (req, res) => {
     res.render(

@@ -46,7 +46,7 @@ module.exports = [
     },
     {
         name: 'Metroid',
-        img: 'https://assets.nintendo.com/image/upload/f_auto,q_auto,w_428/ncom/en_US/amiibo/wolf-link-amiibo/figure?v=2022042300',
+        img: 'https://assets.nintendo.com/image/upload/f_auto,q_auto,w_428/ncom/en_US/amiibo/metroid-amiibo-metroid-series/figure?v=2022042205',
         series: 'Metroid Series',
         desription: `These mysterious organisms have the power to absorb the energy of any life-form with which they come in contact, and this ability has put them at the center of many a galactic conflict. Nefarious Space Pirates want to use them as a weapon—one powerful enough to conquer the entire galaxy. To combat this threat, the Galactic Federation dispatched a lone bounty hunter, Samus Aran, to eliminate the Metroid™ menace once and for all.`,
         condition: 'New',
