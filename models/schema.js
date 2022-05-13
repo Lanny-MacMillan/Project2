@@ -10,6 +10,9 @@ const amiiboSchema = new mongoose.Schema(
     condition: {type:String, required:true},
     price: {type:String, required:true},
     purchasedFrom: {type:String, required:true},
+    compatibleGames: Array,
+    gameFunction: Array,
+    
     }
 )
 
