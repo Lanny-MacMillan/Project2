@@ -15,7 +15,14 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 
 // use public folder for css
-app.use(express.static('public'))
+// const $ = require('javascript')
+
+// $('#myModal').on('shown.bs.modal', function () {
+//     $('#myInput').trigger('focus')
+// })
+
+
+
 
 //___________________
 //Port
@@ -130,6 +137,18 @@ app.get('/:id', (req, res) => {
     })
 })
 
+//SHOW MODAL
+app.get('/delete/:id', (req, res) => {
+    Amiibo.findById(req.params.id, (error, oneAmiibo) => {
+        res.render(
+        'delete.ejs', 
+            {
+            Amiibo: oneAmiibo
+            }
+        )
+    })
+})
+
 // NEW/POST
 app.post('/', (req,res) => {
 	Amiibo.create(req.body, (err, newAmiibo) => {
@@ -155,11 +174,11 @@ app.put('/:id', (req, res) => {
 })
 
 // DELETE
-// app.delete('/:id', (req, res)=>{
-//     Amiibo.findByIdAndRemove(req.params.id, (err, data)=>{
-//         res.redirect('/');//redirect back to index
-//     });
-// });
+app.delete('/:id', (req, res)=>{
+    Amiibo.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/');//redirect back to index
+    });
+});
 // =======================================
 //              Listener
 // =======================================

@@ -1,19 +1,13 @@
-.mainContainer {
-    max-width: 1200px;
-    display: flex;
-    justify-content: center;
+#thumbnail:hover {
+    /* position:relative;
+    top:-25px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999; */
+    /* transform: scale(1.5); */
 }
-.header{
-    max-width: 1200px;
+button:hover {
+    box-shadow: 5px 5px 5px 5px black;
 }
-ul {
-    text-align: center;
-}
-.indexImg {
-    width: 100%;
-    max-width: 428px;
-}
-/* #catalog {
-    display: flex;
-    justify-content: center;
-} */
