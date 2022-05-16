@@ -1,13 +1,7 @@
-#thumbnail:hover {
-    /* position:relative;
-    top:-25px;
-    left:-35px;
-    width:500px;
-    height:auto;
-    display:block;
-    z-index:999; */
-    /* transform: scale(1.5); */
+#thumbnail {
+
 }
+
 button:hover {
     box-shadow: 5px 5px 5px 5px black;
 }
