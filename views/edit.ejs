@@ -53,31 +53,32 @@
     <!--=============================== Form =======================================================-->
     <form id="form" name="form" action="/<%=Amiibo.id;%>?_method=PUT" method="POST" >
         <label for="name">Name</label>
-        <input type="text" id="name" class="form-control" name="name" placeholder="* <%=Amiibo.name%>" required /><br/>
-
+        <input type="text" id="name" class="form-control" name="name" placeholder="* <%=Amiibo.name%>" required>
+        <br/>
         <label for="image(url)">Image(url)</label>
-        <input type="text" id="image(url)" class="form-control" name="img" placeholder="* <%=Amiibo.img%>" required /><br/>
-
+        <input type="text" id="image(url)" class="form-control" name="img" placeholder="* <%=Amiibo.img%>" required/>
+        <br/>
         <label for="series">Series</label>
-        <input type="text" id="series" class="form-control" name="series" placeholder="* <%=Amiibo.series%>" required /><br/>
-
+        <input type="text" id="series" class="form-control" name="series" placeholder="* <%=Amiibo.series%>" required />
+        <br/>
         <label for="description">Description</label>
-        <textarea class="form-control" id="description" rows="4" name="description"placeholder="* <%=Amiibo.description%>" required></textarea><br/>
-
+        <textarea class="form-control" id="description" rows="4" name="description"placeholder="* <%=Amiibo.description%>" required></textarea>
+        <br/>
         <label for="condition">Condition</label>
-        <input type="text" id="condition" class="form-control" name="condition" placeholder="* <%=Amiibo.condition%>" required /><br/>
-
+        <input type="text" id="condition" class="form-control" name="condition" placeholder="* <%=Amiibo.condition%>" required />
+        <br/>
         <label for="price">Price</label>
-        <input type="text" id="price" class="form-control" name="price" placeholder="* <%=Amiibo.price%>" required /><br/>
-
+        <input type="text" id="price" class="form-control" name="price" placeholder="* <%=Amiibo.price%>" required />
+        <br/>
         <label for="purchasedFrom">Purchased from</label>
-        <input type="text" id="purchasedFrom" class="form-control" name="purchasedFrom" placeholder="* Purchased from" required /><br/>
-
+        <input type="text" id="purchasedFrom" class="form-control" name="purchasedFrom" placeholder="* Purchased from" required />
+        <br/>
         <label for="compatibleGames">Compatible Games</label>
-        <textarea class="form-control" id="compatibleGames" rows="4" name="compatibleGames" placeholder="<%=Amiibo.compatibleGames%>"></textarea><br/>
-
+        <textarea class="form-control" id="compatibleGames" rows="4" name="compatibleGames" placeholder="<%=Amiibo.compatibleGames%>"></textarea>
+        <br/>
         <label for="gameFunction">Game Function</label>
-        <textarea class="form-control" id="gameFunction" rows="4" name="gameFunction" placeholder=" <%=Amiibo.gameFunction%>"></textarea><br/>
+        <textarea class="form-control" id="gameFunction" rows="4" name="gameFunction" placeholder=" <%=Amiibo.gameFunction%>"></textarea>
+        <br/>
         * Required Fields
         <br>
         <form action="/<%=Amiibo.id;%>?_method=PUT" method="POST" ></form>
@@ -85,11 +86,7 @@
                 <button type="button" class="btn btn-primary btn-lg btn-bloc" style="width:100%" data-toggle="modal" data-target="#confirmEdit">
                 Submit
                 </button>  
-
-
-            </form>
-
-
+    </form>
     <!--=============================== Modal =======================================================-->
     <div class="modal fade" id="confirmEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">

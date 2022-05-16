@@ -21,14 +21,17 @@
   },
   "homepage": "https://github.com/Lanny-MacMillan/Project2#readme",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "bootstrap": "^3.4.1",
     "bower": "^1.8.14",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
     "jquery": "^3.6.0",
     "jsdom": "^19.0.0",
     "method-override": "^3.0.0",
-    "mongoose": "^6.3.3"
+    "mongoose": "^6.3.3",
+    "uuid": "^8.3.2"
   }
 }

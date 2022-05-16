@@ -9,19 +9,33 @@ const db = mongoose.connection;
 require('dotenv').config()
 const Amiibo = require('./models/schema.js')
 
+const bodyparser = require('body-parser')
+const session = require('express-session')
+const{v4:uuidv4} = require('uuid')
+const router = require('./router')
+
+
+app.use(bodyparser.json())
+app.use(bodyparser.urlencoded({extended: true}));
+
+app.use(session({
+    secret: uuidv4(),
+    resave:false,
+    saveUninitialized: true,
+}))
+
+app.use('/route', router)
 
 //body parser, parses form 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json())
 
 // use public folder for css
-// const $ = require('javascript')
+app.use(express.static('public'))
 
-// $('#myModal').on('shown.bs.modal', function () {
-//     $('#myInput').trigger('focus')
-// })
-
-
+// // For login stuff
+// const path = require('path')
+// app.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 //___________________
@@ -102,10 +116,16 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-
+app.set('view engine', 'ejs');
 // =======================================
 //              ROUTES
 // =======================================
+// LOGIN
+app.get('/login', (req, res) => {
+    res.render('base',{title:"Login Sysytem"});
+})
+
+
 // INDEX
 app.get('/', (req, res) => {
     Amiibo.find({}, (error, allAmiibo) => {
@@ -136,6 +156,20 @@ app.get('/:id', (req, res) => {
         );
     })
 })
+// =========================== API =====================================
+
+// app.get('/api/amiibo/', (req, res) => {
+//     Amiibo.findById(req.params.id, (error, showAmiibo) => {
+//         res.render(
+//             'api.ejs',
+//             {
+//             Amiibo: showAmiibo
+//             }
+//         );
+//     })
+// })
+
+// =========================== API =====================================
 
 //SHOW MODAL
 app.get('/delete/:id', (req, res) => {
@@ -183,3 +217,5 @@ app.delete('/:id', (req, res)=>{
 //              Listener
 // =======================================
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+

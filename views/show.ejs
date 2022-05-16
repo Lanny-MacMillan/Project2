@@ -37,45 +37,51 @@
             </div>
         </div>
     <br>
+
+
     <div class="container">
         <div class="container-fluid">
             <div class="row" style="margin-top: 20px;">
-                <div class="col-3 mx-auto, col-sm-6 mx-auto, col-md-4 mx-auto">
+                <div class="col-3 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
                     <h1 class ="showName"><%=Amiibo.name%></h1>
                     <img src="<%=Amiibo.img;%>" alt="<%=Amiibo.name; %>">
                 </div>
-                    <div class="text-center">
-                        <ul id="showInfo">
-                            <h2 class="text-warning"><%=Amiibo.series; %></h2>
-                            <br>
-                            <h3 class="text-danger">Description: </h3>
-                            <li id="showLi"><%=Amiibo.description; %></li>
-                            <br>
-                            <h3 class="text-danger">Condition: </h3>
-                            <li id="showLi"><%=Amiibo.condition; %></li>
-                            <br>
-                            <h3 class="text-danger">Price: </h3>
-                            <li id="showLi"><%=Amiibo.price; %></li>
-                            <br>
-                            <h3 class="text-danger">Purchased From: </h3>
-                            <li id="showLi"><%=Amiibo.purchasedFrom; %></li>
-                            <br>
-                            <h3 class="text-danger">Compatible Games: </h3>
-                            <%for(let i =0; i < Amiibo.compatibleGames.length; i++){%> 
-                            <li id="showLi"><%=Amiibo.compatibleGames[i]; %></li>
-                            <%}%>
-                            <br>
-                            <h3 class="text-danger">Game Functions: </h3>
-                            <%for(let i =0; i < Amiibo.gameFunction.length; i++){%>
-                            <li id="showLi"><%=Amiibo.gameFunction[i]; %></li>
-                            <%}%>
-                        </ul>
-                    </div>
-                
+                        <div class="col-3 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
+                            <ul id="showInfo">
+                                <h2 class="text-warning"><%=Amiibo.series; %></h2>
+                                <br>
+                                <h3 class="text-danger">Description: </h3>
+                                <li id="showLi"><%=Amiibo.description; %></li>
+                                <br>
+                                <h3 class="text-danger">Condition: </h3>
+                                <li id="showLi"><%=Amiibo.condition; %></li>
+                                <br>
+                                <h3 class="text-danger">Price: </h3>
+                                <li id="showLi"><%=Amiibo.price; %></li>
+                                <br>
+                                <h3 class="text-danger">Purchased From: </h3>
+                                <li id="showLi"><%=Amiibo.purchasedFrom; %></li>
+                                <br>
+                                <h3 class="text-danger">Compatible Games: </h3>
+                                <%for(let i =0; i < Amiibo.compatibleGames.length; i++){%> 
+                                <li id="showLi"><%=Amiibo.compatibleGames[i]; %></li>
+                                <%}%>
+                                <br>
+                                <h3 class="text-danger">Game Functions: </h3>
+                                <%for(let i =0; i < Amiibo.gameFunction.length; i++){%>
+                                <li id="showLi"><%=Amiibo.gameFunction[i]; %></li>
+                                <%}%>
+                            </ul>
+                        </div>
             </div>
         </div>
     </div> 
     <br>    
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

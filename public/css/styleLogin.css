@@ -1,0 +1,20 @@
+.center-div {
+    padding-top:10%;
+}
+#login {
+    font-family: snes;
+    font-size:1em;
+}
+.btn.btn-success {
+    padding: .4em 2em;
+}
+body {
+    background-image: url(http://b.thumbs.redditmedia.com/2eHe-LtrTfOzww8YBfxZTbqP7prCZqd-fxyRAcvATpc.png);
+}
+form {
+    padding: .3em;
+}
+
+span {
+    font-size: 1.2em;
+}

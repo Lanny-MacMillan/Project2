@@ -29,6 +29,7 @@ button:hover {
 }
 #showInfo {
     font-family: snes;
+    background: rgb(233, 233, 233)
 }
 #showLi {
     font-size: 1.5em;
