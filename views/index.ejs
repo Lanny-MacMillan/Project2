@@ -23,11 +23,11 @@
                 <br>
                 <div class="row" style="margin-top: 10px;">  
                     <div class="col-xs-4 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
-                        <ul class="navbar-nav mr-auto">
+                        <ul class="navbar-nav mx-auto">
                         <button onclick="window.location.href= '/' " type="button" class="btn btn-primary btn-lg btn-block">Home</button>
                     </div>
                     <div class="col-xs-4 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
-                        <ul class="navbar-nav mr-auto">
+                        <ul class="navbar-nav mx-auto">
                         <button onclick="window.location.href= '/new' " type="button" class="btn btn-warning btn-lg btn-block">Add Amiibo</button>
                         </ul>
                     </div>
@@ -41,7 +41,7 @@
         <div class="container-fluid mx-auto">
             <div class="row" style="margin-top: 20px;">
                     <%for(let i =0; i < Amiibo.length; i++){%>
-                        <div class="col-xs-2 mx-auto, col-sm-6 mx-auto, col-md-4 mx-auto">
+                        <div class="col-10 mx-auto, col-sm-6 mx-auto, col-md-4 mx-auto">
                             <h1 id="nameIndex" class="text-center"><%=Amiibo[i].name; %></h1>
                             <img src="<%=Amiibo[i].img;%>" class="img-fluid" id="thumbnail" alt="<%=Amiibo[i].name; %>">
                             <br>
@@ -49,15 +49,15 @@
                         <div class="container-fluid">
 
                             <div class="row" style="margin-top: 10px;">
-                                <div class="col-xs-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
+                                <div class="col-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/<%=Amiibo[i].id%>'"  type=" button" class="btn btn-success btn-sm btn-block" style="width:100%">View</button>
                                 </div>
 
-                                <div class="col-xs-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
+                                <div class="col-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/<%=Amiibo[i].id%>/edit'"  type=" button" class="btn btn-primary btn-sm btn-block" style="width:100%">Edit</button>
                                 </div>
 
-                                <div class="col-xs-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
+                                <div class="col-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/delete/<%=Amiibo[i].id%>'"  type=" button" class="btn btn-danger btn-sm  btn-block" style="width:100%">Delete</button>
                                 </div>    
                             </div> 

@@ -62,7 +62,7 @@
         <input type="text" id="series" class="form-control" name="series" placeholder="* <%=Amiibo.series%>" required /><br/>
 
         <label for="description">Description</label>
-        <textarea class="form-control" id="description" rows="5" name="description"placeholder="* <%=Amiibo.description%>" required></textarea><br/>
+        <textarea class="form-control" id="description" rows="4" name="description"placeholder="* <%=Amiibo.description%>" required></textarea><br/>
 
         <label for="condition">Condition</label>
         <input type="text" id="condition" class="form-control" name="condition" placeholder="* <%=Amiibo.condition%>" required /><br/>
@@ -74,10 +74,10 @@
         <input type="text" id="purchasedFrom" class="form-control" name="purchasedFrom" placeholder="* Purchased from" required /><br/>
 
         <label for="compatibleGames">Compatible Games</label>
-        <textarea class="form-control" id="compatibleGames" rows="2" name="compatibleGames" placeholder="<%=Amiibo.compatibleGames%>"></textarea><br/>
+        <textarea class="form-control" id="compatibleGames" rows="4" name="compatibleGames" placeholder="<%=Amiibo.compatibleGames%>"></textarea><br/>
 
         <label for="gameFunction">Game Function</label>
-        <textarea class="form-control" id="gameFunction" rows="2" name="gameFunction" placeholder=" <%=Amiibo.gameFunction%>"></textarea><br/>
+        <textarea class="form-control" id="gameFunction" rows="4" name="gameFunction" placeholder=" <%=Amiibo.gameFunction%>"></textarea><br/>
         * Required Fields
         <br>
         <form action="/<%=Amiibo.id;%>?_method=PUT" method="POST" ></form>

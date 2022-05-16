@@ -1,15 +1,15 @@
 #thumbnail {
 
 }
-
 button:hover {
     box-shadow: 5px 5px 5px 5px black;
 }
 .showName {
     font-family: snes;
-    font-size: 7em;
+    font-size: 6em;
     color: red;
-    text-shadow: 5px 5px 10px black
+    text-shadow: 5px 5px 10px black;
+    text-align: center;
 }
 #nameIndex {
     font-family: snes;
@@ -17,13 +17,13 @@ button:hover {
 }
 #deleteName {
     font-family: snes;
-    font-size: 7em;
+    font-size: 6em;
     color: red;
     text-shadow: 5px 5px 10px black
 }
 .editName {
     font-family: snes;
-    font-size: 7em;
+    font-size: 6em;
     color: red;
     text-shadow: 5px 5px 10px black
 }
