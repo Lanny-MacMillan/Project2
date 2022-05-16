@@ -39,7 +39,7 @@
     <br>
     <div class="jumbotron">
         <div class="text-center">
-        <h1 class="display-4"><%=Amiibo.name%></h1>
+        <h1 id="deleteName" class="display-4"><%=Amiibo.name%></h1>
         <img src="<%=Amiibo.img;%>" class="justify-center" alt="<%=Amiibo.name; %>">
         <hr class="my-4">
         <p>Deleting this Amiibo with permananlty it remove from your index</p>
@@ -72,7 +72,28 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                Are you sure you want to delete <%=Amiibo.name%>?
+                Are you sure you want to delete 
+                <h1 class ="showName"><%=Amiibo.name%></h1>
+                <img src="<%=Amiibo.img;%>" alt="<%=Amiibo.name; %>">
+                <ul>
+                    <h3><%=Amiibo.series; %></h3>
+                    <br>
+                    <li><%=Amiibo.description; %></li>
+                    <br>
+                    Condition: <li><%=Amiibo.condition; %></li>
+                    <br>
+                    Price:<li><%=Amiibo.price; %></li>
+                    <br>
+                    Purchased From: <li><%=Amiibo.purchasedFrom; %></li>
+                    <br>
+                    <h4>Compatible Games: </h4>
+                    <%for(let i =0; i < Amiibo.compatibleGames.length; i++){%> 
+                    <li><%=Amiibo.compatibleGames[i]; %></li>
+                    <%}%>
+                    <h4>Game Functions: </h4>
+                    <%for(let i =0; i < Amiibo.gameFunction.length; i++){%>
+                    <li><%=Amiibo.gameFunction[i]; %></li>
+                    <%}%>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

@@ -39,25 +39,51 @@
 
         </header>
         <br>
-    <h1>Add New Amiibo</h1>
+    <h1 class ="showName">Add New Amiibo</h1>
 
 
     <br>
-    <form action="/" method="POST" >
-        <input type="text" name="name" placeholder="* Name" required /><br/>
-        <input type="text" name="img" placeholder="* Image(url)" required /><br/>
-        <input type="text" name="series" placeholder="* Series" required /><br/>
-        <input type="text" name="description"placeholder="* Description" required /><br/>
-        <input type="text" name="condition" placeholder="* Condition" required /><br/>
-        <input type="text" name="price" placeholder="* Price" required /><br/>
-        <input type="text" name="purchasedFrom" placeholder="* Purchased from" required /><br/>
-        <input type="textarea" rows="5" columns="10" name="compatibleGames" placeholder="Compatible Games"/><br/>
-        <input type="text" name="gameFunction" placeholder="Game Function"/><br/>
-        * Required Fields
-        <br>
-        <input type="submit" class="myButton" value="Add Amiibo"/>
-        <button onclick="window.location.href= '/'" type="button" class="myButton" name="button">Back Home</button>
-    </form>
+
+
+    <p class="lead">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row" style="margin-top: 10px;">  
+                    <div class="col-xs-8 mx-auto, col-sm-8 mx-auto, col-md-8 mx-auto">
+    <!--=============================== Form =======================================================-->
+
+                        <form action="/" method="POST" >
+                            <input type="text" name="name" class="form-control" placeholder="* Name" required />
+                            <br/>
+                            <input type="text" name="img" class="form-control" placeholder="* Image(url)" required />
+                            <br/>
+                            <input type="text" name="series" class="form-control" placeholder="* Series" required />
+                            <br/>
+                            <input type="text" name="description" class="form-control" placeholder="* Description" required />
+                            <br/>
+                            <input type="text" name="condition" class="form-control" placeholder="* Condition" required />
+                            <br/>
+                            <input type="text" name="price" class="form-control" placeholder="* Price" required />
+                            <br/>
+                            <input type="text" name="purchasedFrom" class="form-control" placeholder="* Purchased from" required />
+                            <br/>
+                            <input type="textarea" rows="5" columns="10" name="compatibleGames" class="form-control" placeholder="Compatible Games"/>
+                            <br/>
+                            <input type="text" name="gameFunction" class="form-control" placeholder="Game Function"/>
+                            <br/>
+                            * Required Fields
+                            <br>
+                            <input type="submit" class="myButton" value="Add Amiibo"/>
+
+
+                            <button onclick="window.location.href= '/'" type="button" class="myButton" name="button">Back Home</button>
+
+                        </form>
+                    </div>   
+                </div>       
+            </div>
+        </div>                
+    </p>
 
 
 
@@ -70,3 +96,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

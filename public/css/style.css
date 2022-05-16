@@ -11,3 +11,34 @@
 button:hover {
     box-shadow: 5px 5px 5px 5px black;
 }
+.showName {
+    font-family: snes;
+    font-size: 7em;
+    color: red;
+    text-shadow: 5px 5px 10px black
+}
+#nameIndex {
+    font-family: snes;
+    font-size: 4em;
+}
+#deleteName {
+    font-family: snes;
+    font-size: 7em;
+    color: red;
+    text-shadow: 5px 5px 10px black
+}
+.editName {
+    font-family: snes;
+    font-size: 7em;
+    color: red;
+    text-shadow: 5px 5px 10px black
+}
+#showInfo {
+    font-family: snes;
+}
+#showLi {
+    font-size: 1.5em;
+}
+ul {
+    list-style: none;
+}
