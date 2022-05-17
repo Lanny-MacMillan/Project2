@@ -4,7 +4,9 @@
 body {
     background-image: url(http://b.thumbs.redditmedia.com/2eHe-LtrTfOzww8YBfxZTbqP7prCZqd-fxyRAcvATpc.png);
 }
-
+#navbar {
+    display: none;
+}
 button:hover {
     box-shadow: 5px 5px 5px 5px black;
 }
@@ -25,6 +27,7 @@ button:hover {
     color: red;
     text-shadow: 5px 5px 10px black
 }
+
 .editName {
     font-family: snes;
     font-size: 6em;
@@ -40,4 +43,23 @@ button:hover {
 }
 ul {
     list-style: none;
+}
+/* iframe {
+    min-height:150vh;
+    min-width: 50vh;
+} */
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 60px; overflow: hidden;
+}
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

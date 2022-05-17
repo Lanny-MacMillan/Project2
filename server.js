@@ -147,11 +147,25 @@ app.get('/dashboard',(req, res) => {
     res.redirect('/index')
 })
 
+
+
 // INDEX
 app.get('/index', (req, res) => {
     Amiibo.find({}, (error, allAmiibo) => {
     res.render(
         'index.ejs', 
+            {
+            amiibo: allAmiibo
+            }
+        )
+    })
+})
+
+// NEWS
+app.get('/news', (req, res) => {
+    Amiibo.find({}, (error, allAmiibo) => {
+    res.render(
+        'news.ejs', 
             {
             amiibo: allAmiibo
             }
