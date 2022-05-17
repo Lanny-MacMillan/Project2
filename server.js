@@ -8,11 +8,17 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
 const Amiibo = require('./models/schema.js')
+const User = require('./models/users.js')
+
+
+
 
 const bodyparser = require('body-parser')
 const session = require('express-session')
-const{v4:uuidv4} = require('uuid')
-const router = require('./router')
+
+const{v4:uuidv4} = require('uuid') //password encryption
+const router = require('./router');
+
 
 
 app.use(bodyparser.json())
@@ -34,8 +40,8 @@ app.use(express.json())
 app.use(express.static('public'))
 
 // // For login stuff
-// const path = require('path')
-// app.use('/static', express.static(path.join(__dirname, 'public')))
+const path = require('path')
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 //___________________
@@ -120,19 +126,34 @@ app.set('view engine', 'ejs');
 // =======================================
 //              ROUTES
 // =======================================
-// LOGIN
-app.get('/login', (req, res) => {
-    res.render('base',{title:"Login Sysytem"});
+// app.get('/',(req, res) => {
+//     res.redirect('/login')
+// })
+
+app.get('/', (req, res) => {
+    if (req.session.user == undefined) {
+        res.redirect('/login')
+    } else {
+        res.redirect('/index')
+    }
 })
 
+// LOGIN reroute
+app.get('/login', (req, res) => {
+    res.render('base',{title:"Login System"});
+})
+
+app.get('/dashboard',(req, res) => {
+    res.redirect('/index')
+})
 
 // INDEX
-app.get('/', (req, res) => {
+app.get('/index', (req, res) => {
     Amiibo.find({}, (error, allAmiibo) => {
     res.render(
         'index.ejs', 
             {
-            Amiibo: allAmiibo
+            amiibo: allAmiibo
             }
         )
     })
@@ -151,7 +172,7 @@ app.get('/:id', (req, res) => {
         res.render(
             'show.ejs',
             {
-            Amiibo: showAmiibo
+            amiibo: showAmiibo
             }
         );
     })

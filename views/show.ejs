@@ -42,34 +42,34 @@
     <div class="container">
         <div class="container-fluid">
             <div class="row" style="margin-top: 20px;">
-                <div class="col-3 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
-                    <h1 class ="showName"><%=Amiibo.name%></h1>
-                    <img src="<%=Amiibo.img;%>" alt="<%=Amiibo.name; %>">
+                <div class="col-12 mx-auto, col-sm-12 mx-auto, col-md-6 mx-auto">
+                    <h1 class ="showName"><%=amiibo.name%></h1>
+                    <img src="<%=amiibo.img;%>" alt="<%=amiibo.name; %>">
                 </div>
-                        <div class="col-3 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
+                        <div class="col-12 mx-auto, col-sm-12 mx-auto, col-md-6 mx-auto">
                             <ul id="showInfo">
-                                <h2 class="text-warning"><%=Amiibo.series; %></h2>
+                                <h2 class="text-warning"><%=amiibo.series; %></h2>
                                 <br>
                                 <h3 class="text-danger">Description: </h3>
-                                <li id="showLi"><%=Amiibo.description; %></li>
+                                <li id="showLi"><%=amiibo.description; %></li>
                                 <br>
                                 <h3 class="text-danger">Condition: </h3>
-                                <li id="showLi"><%=Amiibo.condition; %></li>
+                                <li id="showLi"><%=amiibo.condition; %></li>
                                 <br>
                                 <h3 class="text-danger">Price: </h3>
-                                <li id="showLi"><%=Amiibo.price; %></li>
+                                <li id="showLi"><%=amiibo.price; %></li>
                                 <br>
                                 <h3 class="text-danger">Purchased From: </h3>
-                                <li id="showLi"><%=Amiibo.purchasedFrom; %></li>
+                                <li id="showLi"><%=amiibo.purchasedFrom; %></li>
                                 <br>
                                 <h3 class="text-danger">Compatible Games: </h3>
-                                <%for(let i =0; i < Amiibo.compatibleGames.length; i++){%> 
-                                <li id="showLi"><%=Amiibo.compatibleGames[i]; %></li>
+                                <%for(let i =0; i < amiibo.compatibleGames.length; i++){%> 
+                                <li id="showLi"><%=amiibo.compatibleGames[i]; %></li>
                                 <%}%>
                                 <br>
                                 <h3 class="text-danger">Game Functions: </h3>
-                                <%for(let i =0; i < Amiibo.gameFunction.length; i++){%>
-                                <li id="showLi"><%=Amiibo.gameFunction[i]; %></li>
+                                <%for(let i =0; i < amiibo.gameFunction.length; i++){%>
+                                <li id="showLi"><%=amiibo.gameFunction[i]; %></li>
                                 <%}%>
                             </ul>
                         </div>

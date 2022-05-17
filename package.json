@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Lanny-MacMillan/Project2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "bootstrap": "^3.4.1",
     "bower": "^1.8.14",

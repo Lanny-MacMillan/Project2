@@ -1,6 +1,10 @@
 #thumbnail {
 
 }
+body {
+    background-image: url(http://b.thumbs.redditmedia.com/2eHe-LtrTfOzww8YBfxZTbqP7prCZqd-fxyRAcvATpc.png);
+}
+
 button:hover {
     box-shadow: 5px 5px 5px 5px black;
 }
