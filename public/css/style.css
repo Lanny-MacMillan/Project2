@@ -59,6 +59,11 @@ ul {
 .tag {
     font-size: .8em;
 }
+#toTop {
+    font-size: 2em;
+    color: rgb(231, 85, 110);
+
+}
 .responsive-video iframe,
 .responsive-video object,
 .responsive-video embed {
