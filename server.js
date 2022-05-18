@@ -152,14 +152,27 @@ app.get('/dashboard',(req, res) => {
 
 // INDEX
 app.get('/index', (req, res) => {
-    Amiibo.find({}, (error, allAmiibo) => {
-    res.render(
-        'index.ejs', 
-            {
-            amiibo: allAmiibo
-            }
-        )
-    })
+    var noMatch = '';
+    // eval(require('locus'));
+    if(req.query.search) {
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        //get all info from DB
+        Amiibo.find({ "name": regex }, (error, allAmiibo) => {
+            if(error){
+                console.log(error)
+            } else {
+                if(allAmiibo.length < 1) {
+                    noMatch ="No Amiibos in your index match your search, please try again"
+                } 
+                    res.render('index.ejs', {amiibo: allAmiibo, noMatch: noMatch})
+                }
+            })
+    } else {
+        //get all from DB
+        Amiibo.find({}, (error, allAmiibo) => {
+            res.render('index.ejs', {amiibo: allAmiibo, noMatch: noMatch})
+        })
+    }
 })
 
 // NEWS
@@ -273,9 +286,14 @@ app.delete('/:id', (req, res)=>{
         res.redirect('/');//redirect back to index
     });
 });
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
+
 // =======================================
 //              Listener
 // =======================================
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
-
 

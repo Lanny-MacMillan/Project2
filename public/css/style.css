@@ -46,6 +46,7 @@ button:hover {
 ul {
     list-style: none;
 }
+
 /* iframe {
     min-height:150vh;
     min-width: 50vh;
@@ -55,7 +56,9 @@ ul {
     padding-bottom: 56.25%;
     padding-top: 60px; overflow: hidden;
 }
-
+.tag {
+    font-size: .8em;
+}
 .responsive-video iframe,
 .responsive-video object,
 .responsive-video embed {

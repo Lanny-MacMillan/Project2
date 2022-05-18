@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!---------------- HEAD ------------->
+    <%- include ('./partials/head.ejs') %>
+    <!----------------------------------->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- BOOTSTRAP -->
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!-- BOOTSTRAP -->
+<a name="top"></a>
 
-    <title>Home</title>
-</head>
 <body>
 
-    <div class="text-center">
-        <!-- <h5><%=locals.user ? user:"Lanny's"%></h5> -->
-        <h3>My</h3>
-    <img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="justify-center" alt="Amiibo" srcset="">
-    <br>
-    <h3>Collection</h3>
-    <a href="/route/logout">Logout</a>
-    <br>
+    <!----------------HEADER W/ SEARCH ------------->
+    <%- include ('./partials/headerIndex.ejs') %>
+    <!----------------------------------------------->
     
-    <br>
+<!-- =================================NAV BAR================================= -->
     <!-- <nav class="navbar sticky-top navbar-light bg-light">
         <a class="navbar-brand" href="#"><img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="justify-center" alt="Amiibo" srcset=""></a>
         <button onclick="window.location.href= '/' " type="button" class="btn btn-primary btn-lg btn-block">Home</button>
@@ -33,42 +18,25 @@
         <button onclick="window.location.href= '/news' " type="button" class="btn btn-success btn-lg btn-block">Nintendo News</button>
         <a href="/route/logout">Logout</a>
     </nav> -->
-    <div class="header">
-        <div class="container">
-            <div class="container-fluid">
 
-                <br>
-                <div class="row">  
-                    <div class="col-4 mx-auto, col-sm-4 mx-auto, col-md-4 mx-auto">
-                        <ul class="navbar-nav mx-auto">
-                        <button onclick="window.location.href= '/' " type="button" class="btn btn-primary btn-lg btn-block">Home</button>
-                    </div>
-                    <div class="col-4 mx-auto, col-sm-4 mx-auto, col-md-4 mx-auto">
-                        <ul class="navbar-nav mx-auto">
-                        <button id="add" onclick="window.location.href= '/new' " type="button" class="btn btn-warning btn-lg btn-block"></button>
-                        </ul>
-                    </div>
-                    <div class="col-4 mx-auto, col-sm-4 mx-auto, col-md-4 mx-auto">
-                        <ul class="navbar-nav mx-auto">
-                            <button id="news" onclick="window.location.href= '/news' " type="button" class="btn btn-lg btn-block"></button>
 
-                    </div>
-                </div>  
-            </div>
-        </div>
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-10">
+        <% if(noMatch !== undefined) { %>
+            <h3><%= noMatch %></h3>
+            <% } %>
     </div>
-    <%[{$search: {
-        index: 'string',
-        text: {
-          query: 'string',
-          path: 'string'
-        }
-      }}, {}]%>
+</div>
 
-    <div style="max-width: 2000px; margin: 0auto; padding:10px;">
+
+
+<!-- ========================================================================= -->
+<div style="max-width: 2000px; margin: 0auto; padding:10px;">
         <div class="container-fluid mx-auto">
             <div class="row" style="margin-top: 20px;">
                     <%for(let i =0; i < amiibo.length; i++){%>
+                    <!-- break points:   -575           576-768              768+   -->
                         <div class="col-10 mx-auto, col-sm-6 mx-auto, col-md-4 mx-auto">
                             <h1 id="nameIndex" class="text-center"><%=amiibo[i].name; %></h1>
                             <img src="<%=amiibo[i].img;%>" class="img-fluid" id="thumbnail" alt="<%=amiibo[i].name; %>">
@@ -81,11 +49,11 @@
                                 <div class="col-8 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/<%=amiibo[i].id%>'"  type=" button" class="btn btn-success btn-sm btn-block" style="width:100%">View</button>
                                 </div>
-
+                        <!-- break points:   -575           576-768              768+   -->
                                 <div class="col-8 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/<%=amiibo[i].id%>/edit'"  type=" button" class="btn btn-primary btn-sm btn-block" style="width:100%">Edit</button>
                                 </div>
-
+                        <!-- break points:   -575           576-768              768+   -->
                                 <div class="col-8 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/delete/<%=amiibo[i].id%>'"  type=" button" class="btn btn-danger btn-sm  btn-block" style="width:100%">Delete</button>
                                 </div>    
@@ -103,11 +71,14 @@
         </div>
     </div>
 
+    <span style="position: fixed; bottom: 0pt; right: 0pt;">
+        <a href="#top">Top of Page<i class="fa-solid fa-square-up"></i></a>
+        
+    </span>
+    
+    <!---------------- Footer ------------->
+    <%- include ('./partials/footer.ejs') %>
+    <!------------------------------------->
 
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -24,6 +24,7 @@
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "bootstrap": "^3.4.1",
+    "bootstrap-icons": "^1.8.2",
     "bower": "^1.8.14",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
@@ -32,6 +33,7 @@
     "fuzzysearch": "^1.0.3",
     "jquery": "^3.6.0",
     "jsdom": "^19.0.0",
+    "locus": "^2.0.4",
     "method-override": "^3.0.0",
     "mongoose": "^6.3.3",
     "uuid": "^8.3.2"
