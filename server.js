@@ -9,7 +9,7 @@ const db = mongoose.connection;
 require('dotenv').config()
 const Amiibo = require('./models/schema.js')
 const User = require('./models/users.js')
-
+// await Product.fuzzySearch(search).find()
 
 
 
@@ -123,6 +123,7 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 app.set('view engine', 'ejs');
+
 // =======================================
 //              ROUTES
 // =======================================
@@ -191,6 +192,30 @@ app.get('/:id', (req, res) => {
         );
     })
 })
+// =========================== ATLAS search function =====================================
+exports = function(arg){
+    let collection = context.services
+        .get("mongodb-atlas")
+        .db("myFirstDatabase")
+        .collection("amiibos")
+
+    let pipeline = [
+        {
+        $search: {
+            index: "default",
+            text: {
+                query: arg,
+                path: {
+                'wildcard': '*'
+                }
+            }
+        },
+    },
+];
+    
+    return collection.aggregate(pipeline);
+    
+};
 // =========================== API =====================================
 
 // app.get('/api/amiibo/', (req, res) => {

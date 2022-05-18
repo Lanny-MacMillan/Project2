@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- BOOTSTRAP -->
         <!-- CSS only -->
@@ -14,6 +15,7 @@
     <title>Home</title>
 </head>
 <body>
+
     <div class="text-center">
         <!-- <h5><%=locals.user ? user:"Lanny's"%></h5> -->
         <h3>My</h3>
@@ -22,9 +24,7 @@
     <h3>Collection</h3>
     <a href="/route/logout">Logout</a>
     <br>
-    <button onclick="window.location.href= '/news' " type="button" class="btn btn-primary btn-lg btn-block">Nintendo News</button>
-
-    </div>
+    
     <br>
     <!-- <nav class="navbar sticky-top navbar-light bg-light">
         <a class="navbar-brand" href="#"><img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="justify-center" alt="Amiibo" srcset=""></a>
@@ -32,22 +32,26 @@
         <button onclick="window.location.href= '/new' " type="button" class="btn btn-warning btn-lg btn-block">Add amiibo</button>
         <button onclick="window.location.href= '/news' " type="button" class="btn btn-success btn-lg btn-block">Nintendo News</button>
         <a href="/route/logout">Logout</a>
-      </nav> -->
-
+    </nav> -->
     <div class="header">
         <div class="container">
             <div class="container-fluid">
 
                 <br>
-                <div class="row" style="margin-top: 10px;">  
-                    <div class="col-xs-4 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
+                <div class="row">  
+                    <div class="col-4 mx-auto, col-sm-4 mx-auto, col-md-4 mx-auto">
                         <ul class="navbar-nav mx-auto">
                         <button onclick="window.location.href= '/' " type="button" class="btn btn-primary btn-lg btn-block">Home</button>
                     </div>
-                    <div class="col-xs-4 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
+                    <div class="col-4 mx-auto, col-sm-4 mx-auto, col-md-4 mx-auto">
                         <ul class="navbar-nav mx-auto">
-                        <button onclick="window.location.href= '/new' " type="button" class="btn btn-warning btn-lg btn-block">Add amiibo</button>
+                        <button id="add" onclick="window.location.href= '/new' " type="button" class="btn btn-warning btn-lg btn-block"></button>
                         </ul>
+                    </div>
+                    <div class="col-4 mx-auto, col-sm-4 mx-auto, col-md-4 mx-auto">
+                        <ul class="navbar-nav mx-auto">
+                            <button id="news" onclick="window.location.href= '/news' " type="button" class="btn btn-lg btn-block"></button>
+
                     </div>
                 </div>  
             </div>
@@ -73,15 +77,16 @@
                         <div class="container-fluid">
 
                             <div class="row" style="margin-top: 10px;">
-                                <div class="col-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
+                        <!-- break points:   -575           576-768              768+   -->
+                                <div class="col-8 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/<%=amiibo[i].id%>'"  type=" button" class="btn btn-success btn-sm btn-block" style="width:100%">View</button>
                                 </div>
 
-                                <div class="col-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
+                                <div class="col-8 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/<%=amiibo[i].id%>/edit'"  type=" button" class="btn btn-primary btn-sm btn-block" style="width:100%">Edit</button>
                                 </div>
 
-                                <div class="col-12 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
+                                <div class="col-8 mx-auto, col-sm-5 mx-auto, col-md-4 mx-auto">
                                     <button onclick="window.location.href= '/delete/<%=amiibo[i].id%>'"  type=" button" class="btn btn-danger btn-sm  btn-block" style="width:100%">Delete</button>
                                 </div>    
                             </div> 

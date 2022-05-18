@@ -44,30 +44,30 @@
             <div class="row" style="margin-top: 20px;">
                 <div class="col-12 mx-auto, col-sm-12 mx-auto, col-md-6 mx-auto">
                     <h1 class ="showName"><%=amiibo.name%></h1>
-                    <img src="<%=amiibo.img;%>" alt="<%=amiibo.name; %>">
+                    <img class="slide-in-fwd-center" src="<%=amiibo.img;%>" alt="<%=amiibo.name; %>">
                 </div>
                         <div class="col-12 mx-auto, col-sm-12 mx-auto, col-md-6 mx-auto">
                             <ul id="showInfo">
-                                <h2 class="text-warning"><%=amiibo.series; %></h2>
+                                <h4 class="text-warning"><%=amiibo.series; %></h4>
                                 <br>
-                                <h3 class="text-danger">Description: </h3>
+                                <h4 class="text-danger">Description: </h4>
                                 <li id="showLi"><%=amiibo.description; %></li>
                                 <br>
-                                <h3 class="text-danger">Condition: </h3>
+                                <h4 class="text-danger">Condition: </h4>
                                 <li id="showLi"><%=amiibo.condition; %></li>
                                 <br>
-                                <h3 class="text-danger">Price: </h3>
+                                <h4 class="text-danger">Price: </h4>
                                 <li id="showLi"><%=amiibo.price; %></li>
                                 <br>
-                                <h3 class="text-danger">Purchased From: </h3>
+                                <h4 class="text-danger">Purchased From: </h4>
                                 <li id="showLi"><%=amiibo.purchasedFrom; %></li>
                                 <br>
-                                <h3 class="text-danger">Compatible Games: </h3>
+                                <h4 class="text-danger">Compatible Games: </h4>
                                 <%for(let i =0; i < amiibo.compatibleGames.length; i++){%> 
                                 <li id="showLi"><%=amiibo.compatibleGames[i]; %></li>
                                 <%}%>
                                 <br>
-                                <h3 class="text-danger">Game Functions: </h3>
+                                <h4 class="text-danger">Game Functions: </h4>
                                 <%for(let i =0; i < amiibo.gameFunction.length; i++){%>
                                 <li id="showLi"><%=amiibo.gameFunction[i]; %></li>
                                 <%}%>

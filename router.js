@@ -15,32 +15,12 @@ router.post('/login',(req,res) => {
         res.redirect('/index')
         // res.end('Login Successful...!')
     } else {
-        res.end("Invalid Username")
+        res.end("Invalid Username/Password")
     }
 })
-// INDEX
-// router.get('/index', (req, res) => {
-//     Amiibo.find({}, (error, allAmiibo) => {
-//     res.render(
-//         'index.ejs', 
-//             {
-//             amiibo: allAmiibo
-//             }
-//         )
-//     })
-// })
-//Route to dashboard
-router.get('/dashboard', (req,res) => {
-    if(req.session.user){
-        res.render('dashboard.ejs', {user: req.session.user})
-    } else {
-        res.send('Unauthorized User')
-    }
-})
-
 
  //route to logout
- router.get('/logout', (req,res) => {
+router.get('/logout', (req,res) => {
     req.session.destroy(function(err){
         if(err){
             console.log(err);
