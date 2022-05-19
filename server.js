@@ -127,10 +127,8 @@ app.set('view engine', 'ejs');
 // =======================================
 //              ROUTES
 // =======================================
-// app.get('/',(req, res) => {
-//     res.redirect('/login')
-// })
 
+// If not logged in redirect to login page
 app.get('/', (req, res) => {
     if (req.session.user == undefined) {
         res.redirect('/login')
@@ -143,11 +141,10 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('base',{title:"Login System"});
 })
-
+//REDIRECT FROM DASH TO INDEX
 app.get('/dashboard',(req, res) => {
     res.redirect('/index')
 })
-
 
 // INDEX
 app.get('/index', (req, res) => {
@@ -192,6 +189,12 @@ app.get('/new', (req, res) => {
         'new.ejs', 
         )
 })
+// NEW/POST
+app.post('/', (req,res) => {
+	Amiibo.create(req.body, (err, newAmiibo) => {
+		res.redirect('/')
+	})
+})
 
 // SHOW
 app.get('/:id', (req, res) => {
@@ -204,64 +207,6 @@ app.get('/:id', (req, res) => {
         );
     })
 })
-// =========================== ATLAS search function =====================================
-exports = function(arg){
-    let collection = context.services
-        .get("mongodb-atlas")
-        .db("myFirstDatabase")
-        .collection("amiibos")
-
-    let pipeline = [
-        {
-        $search: {
-            index: "default",
-            text: {
-                query: arg,
-                path: {
-                'wildcard': '*'
-                }
-            }
-        },
-    },
-];
-    
-    return collection.aggregate(pipeline);
-    
-};
-// =========================== API =====================================
-
-// app.get('/api/amiibo/', (req, res) => {
-//     Amiibo.findById(req.params.id, (error, showAmiibo) => {
-//         res.render(
-//             'api.ejs',
-//             {
-//             Amiibo: showAmiibo
-//             }
-//         );
-//     })
-// })
-
-// =========================== API =====================================
-
-//SHOW MODAL
-app.get('/delete/:id', (req, res) => {
-    Amiibo.findById(req.params.id, (error, oneAmiibo) => {
-        res.render(
-        'delete.ejs', 
-            {
-            Amiibo: oneAmiibo
-            }
-        )
-    })
-})
-
-// NEW/POST
-app.post('/', (req,res) => {
-	Amiibo.create(req.body, (err, newAmiibo) => {
-		res.redirect('/')
-	})
-})
-
 // EDIT/GET
 app.get('/:id/edit', (req, res) => {
 	Amiibo.findById(req.params.id, (err, editAmiibo) => {
@@ -276,6 +221,18 @@ app.get('/:id/edit', (req, res) => {
 app.put('/:id', (req, res) => {
     Amiibo.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedAmiibo) => {
         res.redirect('/')
+    })
+})
+
+// DELETE :ID PAGE
+app.get('/delete/:id', (req, res) => {
+    Amiibo.findById(req.params.id, (error, oneAmiibo) => {
+        res.render(
+        'delete.ejs', 
+            {
+            Amiibo: oneAmiibo
+            }
+        )
     })
 })
 

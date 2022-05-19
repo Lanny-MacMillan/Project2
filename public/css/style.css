@@ -1,4 +1,7 @@
-
+#search {
+    text-align: center;
+    align-content: center;
+}
 body {
     background-image: url(http://b.thumbs.redditmedia.com/2eHe-LtrTfOzww8YBfxZTbqP7prCZqd-fxyRAcvATpc.png);
 }
@@ -6,11 +9,11 @@ body {
     display: none;
 }
 button:hover {
-    box-shadow: 5px 5px 5px 5px black;
+    box-shadow: 3px 3px 2px 2px rgb(0, 0, 0, 0.62);
 }
 .showName {
     font-family: snes;
-    font-size: 6em;
+    font-size: 5em;
     color: red;
     text-shadow: 5px 5px 10px black;
     text-align: center;
@@ -55,7 +58,10 @@ ul {
 #toTop {
     font-size: 2em;
     color: rgb(231, 85, 110);
-
+}
+#newsText {
+    font-size: 1.3em;
+    font-family: snes;
 }
 .responsive-video iframe,
 .responsive-video object,
@@ -161,9 +167,28 @@ ul {
         content: 'Add';
     }
 }
+/* =============================hide and show nav================================== */
+
+/* #site-header {
+    position: fixed;
+    height: 52px;
+    background: #fff;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all .3s ease;
+    box-shadow: 0 1px 25px rgba(0,0,0, .1);
+}
+#site-header.hide {
+    top: -53px;
+} */
+
+
 /* ===================================media queries===================================== */
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
+    .showName {
+        font-size: 3em;
+    }
 }

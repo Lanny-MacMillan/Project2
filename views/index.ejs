@@ -10,26 +10,21 @@
     <%- include ('./partials/headerIndex.ejs') %>
     <!----------------------------------------------->
     
-<!-- =================================NAV BAR================================= -->
-    <!-- <nav class="navbar sticky-top navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="justify-center" alt="Amiibo" srcset=""></a>
-        <button onclick="window.location.href= '/' " type="button" class="btn btn-primary btn-lg btn-block">Home</button>
-        <button onclick="window.location.href= '/new' " type="button" class="btn btn-warning btn-lg btn-block">Add amiibo</button>
-        <button onclick="window.location.href= '/news' " type="button" class="btn btn-success btn-lg btn-block">Nintendo News</button>
-        <a href="/route/logout">Logout</a>
-    </nav> -->
+<!-- =============================Search Error================================= -->
 
-
-
-<div class="row" style="margin-top: 20px;">
-    <div class="col-md-10">
-        <% if(noMatch !== undefined) { %>
-            <h3><%= noMatch %></h3>
-            <% } %>
+    <div class="header">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-8 mx-auto, col-sm-6 mx-auto, col-md-6 mx-auto">
+                <% if(noMatch !== undefined) { %>
+                    <h3><%= noMatch %></h3>
+                    <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-
 
 <!-- ========================================================================= -->
 <div style="max-width: 2000px; margin: 0auto; padding:10px;">
@@ -37,8 +32,8 @@
             <div class="row" style="margin-top: 20px;">
                     <%for(let i =0; i < amiibo.length; i++){%>
                     <!-- break points:   -575           576-768              768+   -->
-                        <div class="col-10 mx-auto, col-sm-6 mx-auto, col-md-4 mx-auto">
-                            <h1 id="nameIndex" class="text-center"><%=amiibo[i].name; %></h1>
+                        <div class="col-8 mx-auto, col-sm-6 mx-auto, col-md-4 mx-auto">
+                            <h1 id="nameIndex" class="text-center"><%=amiibo[i].name %></h1>
                             <img src="<%=amiibo[i].img;%>" class="img-fluid" id="thumbnail" alt="<%=amiibo[i].name; %>">
                             <br>
                         <div style="max-width: 1200px; margin: 0auto; padding:10px;">

@@ -1,0 +1,61 @@
+<navid id="scrollNav" class="navbar sticky-top navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="https://assets.nintendo.com/image/upload/f_auto,q_auto/Dev/aem-component-demo/logo-amiibo-glow?v=2022042017" class="justify-center" alt="Amiibo" srcset=""></a>
+    <button onclick="window.location.href= '/' " type="button" class="btn btn-primary btn-lg btn-block">Home</button>
+    <button onclick="window.location.href= '/new' " type="button" class="btn btn-warning btn-lg btn-block">Add amiibo</button>
+    <button onclick="window.location.href= '/news' " type="button" class="btn btn-success btn-lg btn-block">Nintendo News</button>
+    <a href="/route/logout">Logout</a>
+</nav>
+<script>
+(function(){
+
+    var doc = document.documentElement;
+    var w = window;
+  
+    var prevScroll = w.scrollY || doc.scrollTop;
+    var curScroll;
+    var direction = 0;
+    var prevDirection = 0;
+  
+    var header = document.getElementById('site-header');
+  
+    var checkScroll = function() {
+  
+      /*
+      ** Find the direction of scroll
+      ** 0 - initial, 1 - up, 2 - down
+      */
+  
+      curScroll = w.scrollY || doc.scrollTop;
+      if (curScroll > prevScroll) { 
+        //scrolled up
+        direction = 2;
+      }
+      else if (curScroll < prevScroll) { 
+        //scrolled down
+        direction = 1;
+      }
+  
+      if (direction !== prevDirection) {
+        toggleHeader(direction, curScroll);
+      }
+  
+      prevScroll = curScroll;
+    };
+  
+    var toggleHeader = function(direction, curScroll) {
+      if (direction === 2 && curScroll > 52) { 
+  
+        //replace 52 with the height of your header in px
+  
+        header.classList.add('hide');
+        prevDirection = direction;
+      }
+      else if (direction === 1) {
+        header.classList.remove('hide');
+        prevDirection = direction;
+      }
+    };
+  
+    window.addEventListener('scroll', checkScroll);%>
+  
+  })();</script>
