@@ -12,15 +12,16 @@ const User = require('./models/users.js')
 // await Product.fuzzySearch(search).find()
 
 
-
 const bodyparser = require('body-parser')
 const session = require('express-session')
 
+// Password encryption
 const{v4:uuidv4} = require('uuid') //password encryption
+
+// Route connection for login
 const router = require('./router');
 
-
-
+//parser for form return
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: true}));
 
@@ -44,11 +45,12 @@ const path = require('path')
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
 
-//___________________
-//Port
-//___________________
+// =======================================
+//                 PORT
+// =======================================
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT
+
 
 // =======================================
 //              DATABASE

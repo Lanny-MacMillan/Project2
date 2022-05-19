@@ -12,7 +12,7 @@
     <div class="jumbotron">
         <div class="text-center">
         <h1 id="deleteName" class="display-4"><%=Amiibo.name%></h1>
-        <img src="<%=Amiibo.img;%>" class="justify-center" alt="<%=Amiibo.name; %>">
+        <img src="<%=Amiibo.img;%>" id="flicker-1" class="justify-center" alt="<%=Amiibo.name; %>">
         <hr class="my-4">
         <p>Deleting this Amiibo with permananlty it remove from your index</p>
     </div>
@@ -31,68 +31,50 @@
             </div>                
         </p>
     </div>
-
     <br>
                 <!-- Modal -->
-                <div class="modal fade" id="confirmdelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
+        <div class="modal fade" id="confirmdelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Confirm Delete</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
                     Deleting this Amiibo with permananlty it remove from your index
-                <h1 class ="showName"><%=Amiibo.name%></h1>
-                <img src="<%=Amiibo.img;%>" alt="<%=Amiibo.name; %>">
-                <ul>
-                    <h3><%=Amiibo.series; %></h3>
-                    <br>
-                    <li><%=Amiibo.description; %></li>
-                    <br>
-                    Condition: <li><%=Amiibo.condition; %></li>
-                    <br>
-                    Price:<li><%=Amiibo.price; %></li>
-                    <br>
-                    Purchased From: <li><%=Amiibo.purchasedFrom; %></li>
-                    <br>
-                    <h4>Compatible Games: </h4>
-                    <%for(let i =0; i < Amiibo.compatibleGames.length; i++){%> 
-                    <li><%=Amiibo.compatibleGames[i]; %></li>
-                    <%}%>
-                    <h4>Game Functions: </h4>
-                    <%for(let i =0; i < Amiibo.gameFunction.length; i++){%>
-                    <li><%=Amiibo.gameFunction[i]; %></li>
-                    <%}%>
+                        <h1 class ="showName"><%=Amiibo.name%></h1>
+                        <img src="<%=Amiibo.img;%>" alt="<%=Amiibo.name; %>">
+                        <ul>
+                            <h3><%=Amiibo.series; %></h3>
+                            <br>
+                            <li><%=Amiibo.description; %></li>
+                            <br>
+                            Condition: <li><%=Amiibo.condition; %></li>
+                            <br>
+                            Price:<li><%=Amiibo.price; %></li>
+                            <br>
+                            Purchased From: <li><%=Amiibo.purchasedFrom; %></li>
+                            <br>
+                            <h4>Compatible Games: </h4>
+                            <%for(let i =0; i < Amiibo.compatibleGames.length; i++){%> 
+                            <li><%=Amiibo.compatibleGames[i]; %></li>
+                            <%}%>
+                            <h4>Game Functions: </h4>
+                            <%for(let i =0; i < Amiibo.gameFunction.length; i++){%>
+                            <li><%=Amiibo.gameFunction[i]; %></li>
+                            <%}%>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <form action="/<%=Amiibo.id; %>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-danger btn-lg btn-block" value="Delete">
+                        </form>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <form action="/<%=Amiibo.id; %>?_method=DELETE" method="POST">
-                    <input type="submit" class="btn btn-danger btn-lg btn-block" value="Delete">
-                </form>
-                </div>
-                </div>
-</div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
+        </div>
 
 
     <!---------------- Footer ------------->

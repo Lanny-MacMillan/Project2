@@ -83,7 +83,13 @@ ul {
 	-webkit-animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 	animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
- /* * ----------------------------------------
+/* delete page img */
+#flicker-1 {
+	-webkit-animation: flicker-1 2s linear infinite both;
+	animation: flicker-1 2s linear infinite both;
+}
+/* 
+* ----------------------------------------
  * animation slide-in-fwd-center
  * ---------------------------------------- */
 /* view page img keyframes */
@@ -111,7 +117,6 @@ ul {
         opacity: 1;
     }
 }
-
 /*
  * ----------------------------------------
  * animation roll-in-blurred-left
@@ -150,6 +155,74 @@ ul {
     opacity: 1;
     }
 }
+/*
+* ----------------------------------------
+* animation flicker
+* ----------------------------------------
+*/
+/* delete page img keyframes */
+@-webkit-keyframes flicker-1 {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    41.99% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0;
+    }
+    43% {
+        opacity: 0;
+    }
+    43.01% {
+        opacity: 1;
+    }
+    47.99% {
+        opacity: 1;
+    }
+    48% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    49.01% {
+        opacity: 1;
+    }
+}
+@keyframes flicker-1 {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    41.99% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0;
+    }
+    43% {
+        opacity: 0;
+    }
+    43.01% {
+        opacity: 1;
+    }
+    47.99% {
+        opacity: 1;
+    }
+    48% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    49.01% {
+        opacity: 1;
+    }
+}
+
+/* ============================TARGET MEDIA QUERIES================================= */
 
 #news:before {
     content: 'Nintendo News';
@@ -167,24 +240,8 @@ ul {
         content: 'Add';
     }
 }
-/* =============================hide and show nav================================== */
 
-/* #site-header {
-    position: fixed;
-    height: 52px;
-    background: #fff;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    transition: all .3s ease;
-    box-shadow: 0 1px 25px rgba(0,0,0, .1);
-}
-#site-header.hide {
-    top: -53px;
-} */
-
-
-/* ===================================media queries===================================== */
+/* ===========================FULL APP MEDIA QUERIES================================ */
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
